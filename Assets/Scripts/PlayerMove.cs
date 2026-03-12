@@ -1,14 +1,21 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using System;
 using Unity.VisualScripting;
 public class PlayerMove : MonoBehaviour
 {
     [Header("스크립터블 오브젝트 연결")]
     public BallStat stat;
+    [Header("입력 세팅")]
+    public InputActionReference moveAction;
 
     private Rigidbody rb;
     private Vector3 movement;
 
+    private void OnEnable()
+    {
+        moveAction.action.Enable();
+    }
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -16,9 +23,8 @@ public class PlayerMove : MonoBehaviour
     
     private void Update()
     {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveZ = Input.GetAxis("Vertical");
-        movement = new Vector3(moveX, 0, moveZ).normalized;
+        Vector2 moveInput = moveAction.action.ReadValue<Vector2>();
+        movement = new Vector3(moveInput.x, 0, moveInput.y).normalized;
     }
 
     private void FixedUpdate()
@@ -28,4 +34,8 @@ public class PlayerMove : MonoBehaviour
         rb.linearVelocity = new Vector3(targetVelocity.x, currentY, targetVelocity.z);
     }
 
+    private void OnDisable()
+    {
+        moveAction.action.Disable();
+    }
 }
