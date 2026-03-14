@@ -2,7 +2,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerJump : MonoBehaviour
 {
-    public BallStat stat;
+    [Header("상위 스크립트 PlayerMoveService 연결")]
+    public PlayerMoveService moveService;
+    [Header("입력 세팅")]
     public InputActionReference jumpAction;
     private Rigidbody rb;
     
@@ -28,7 +30,7 @@ public class PlayerJump : MonoBehaviour
     {
         if (IsGrounded())
         {
-            rb.AddForce(Vector3.up * stat.jump, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * moveService.stat.jump, ForceMode.Impulse);
         }
     }
 }

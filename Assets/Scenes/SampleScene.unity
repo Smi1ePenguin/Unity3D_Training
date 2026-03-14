@@ -294,6 +294,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &425373102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Player/Move
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: 7ea26eeb7e0038c4980c9bd2048781f4, type: 3}
+  m_ActionId: a063bcca-8b3a-4dac-9cf2-ff80fef1992e
 --- !u!4 &430214421 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3141058316152736975, guid: 81ae07020fd657244a07ba7fbdebb5d5, type: 3}
@@ -487,7 +501,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2748274930338939136, guid: 3e374b4145c27d048ac7a53e941a5d8f, type: 3}
   m_PrefabInstance: {fileID: 5487152159871819079}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &683846374
+--- !u!114 &683846375
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -496,11 +510,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 683846369}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b39b17cdd2731d84592cb44ea688db2b, type: 3}
+  m_Script: {fileID: 11500000, guid: fe746de5af1a3f34f92c0d50037cc250, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerJump
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMoveService
   stat: {fileID: 11400000, guid: 12e600c056c0d8640955ca177baa7204, type: 2}
-  jumpAction: {fileID: 718999808}
+  moveAction: {fileID: 425373102}
+  DashAction: {fileID: 1315992725}
+--- !u!114 &683846376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683846369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fe52ed85a1f6e34fb7b621c4239b96f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDash
+  moveService: {fileID: 683846375}
 --- !u!1001 &684007071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1018,6 +1046,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3141058316152736975, guid: 81ae07020fd657244a07ba7fbdebb5d5, type: 3}
   m_PrefabInstance: {fileID: 1482582043}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1315992725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Player/Dash
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: 7ea26eeb7e0038c4980c9bd2048781f4, type: 3}
+  m_ActionId: e4f30659-7323-473a-a67a-cafbdf9de6aa
 --- !u!1001 &1333327643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2191,13 +2233,28 @@ PrefabInstance:
       propertyPath: moveAction
       value: 
       objectReference: {fileID: 1699309323}
+    - target: {fileID: 5267702787531415171, guid: 3e374b4145c27d048ac7a53e941a5d8f, type: 3}
+      propertyPath: moveService
+      value: 
+      objectReference: {fileID: 683846375}
+    - target: {fileID: 5484621486414125940, guid: 3e374b4145c27d048ac7a53e941a5d8f, type: 3}
+      propertyPath: jumpAction
+      value: 
+      objectReference: {fileID: 718999808}
+    - target: {fileID: 5484621486414125940, guid: 3e374b4145c27d048ac7a53e941a5d8f, type: 3}
+      propertyPath: moveService
+      value: 
+      objectReference: {fileID: 683846375}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2748274930338939136, guid: 3e374b4145c27d048ac7a53e941a5d8f, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 683846374}
+      insertIndex: 1
+      addedObject: {fileID: 683846375}
+    - targetCorrespondingSourceObject: {fileID: 2748274930338939136, guid: 3e374b4145c27d048ac7a53e941a5d8f, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 683846376}
   m_SourcePrefab: {fileID: 100100000, guid: 3e374b4145c27d048ac7a53e941a5d8f, type: 3}
 --- !u!1001 &6007966088880790865
 PrefabInstance:

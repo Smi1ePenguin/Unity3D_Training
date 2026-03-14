@@ -7,5 +7,9 @@ public class BallStat : ScriptableObject
     public float moveSpeed = 10f;
     
     public float jump = 7f;
-    public float sprint_multiplier = 1.5f;
+    public float dashPower = 1.5f;
+
+    [Header("Appearance")]
+    public Color ballColor = Color.white;
+    public float ballSize = 1f;
 }

@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BallStat
   moveSpeed: 7
   jump: 100
+  dashPower: 2000
+  ballColor: {r: 1, g: 1, b: 1, a: 1}
+  ballSize: 1
