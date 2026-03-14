@@ -7,5 +7,5 @@ public class BallStat : ScriptableObject
     public float moveSpeed = 10f;
     
     public float jump = 7f;
-    
+    public float sprint_multiplier = 1.5f;
 }

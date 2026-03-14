@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: NormalBallStat
   m_EditorClassIdentifier: Assembly-CSharp::BallStat
   moveSpeed: 7
-  bounce: 100
+  jump: 100

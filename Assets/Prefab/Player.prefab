@@ -240,7 +240,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
       propertyPath: m_Name
-      value: BombBall
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
       propertyPath: m_TagString
@@ -260,15 +260,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.53
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.54433
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -310,6 +310,9 @@ PrefabInstance:
       addedObject: {fileID: 5267702787531415171}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 5484621486414125940}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 4987449464618759196}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
       insertIndex: -1
@@ -338,6 +341,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
   stat: {fileID: 11400000, guid: 12e600c056c0d8640955ca177baa7204, type: 2}
+  moveAction: {fileID: 0}
+--- !u!114 &5484621486414125940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2748274930338939136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39b17cdd2731d84592cb44ea688db2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerJump
+  stat: {fileID: 11400000, guid: 12e600c056c0d8640955ca177baa7204, type: 2}
+  jumpAction: {fileID: 0}
 --- !u!54 &4987449464618759196
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -22,15 +22,5 @@ public class GameManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    private void OnEnable()
-    {
-
-    }
-    private void OnDisable()
-    {
-        
-    }
-
-    
     
 }

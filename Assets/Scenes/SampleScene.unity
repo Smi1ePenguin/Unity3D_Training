@@ -482,6 +482,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2494185979427425891, guid: 449c18792c2962b47915da293c19ad95, type: 3}
+--- !u!1 &683846369 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2748274930338939136, guid: 3e374b4145c27d048ac7a53e941a5d8f, type: 3}
+  m_PrefabInstance: {fileID: 5487152159871819079}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &683846374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683846369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39b17cdd2731d84592cb44ea688db2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerJump
+  stat: {fileID: 11400000, guid: 12e600c056c0d8640955ca177baa7204, type: 2}
+  jumpAction: {fileID: 718999808}
 --- !u!1001 &684007071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -547,6 +566,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3141058316152736975, guid: 81ae07020fd657244a07ba7fbdebb5d5, type: 3}
   m_PrefabInstance: {fileID: 1333327643}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &718999808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Player/Jump
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: 7ea26eeb7e0038c4980c9bd2048781f4, type: 3}
+  m_ActionId: d9876b0c-fd3a-4c29-9aca-e4e5ca336ac3
 --- !u!1 &755836436
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,7 +2194,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2748274930338939136, guid: 3e374b4145c27d048ac7a53e941a5d8f, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 683846374}
   m_SourcePrefab: {fileID: 100100000, guid: 3e374b4145c27d048ac7a53e941a5d8f, type: 3}
 --- !u!1001 &6007966088880790865
 PrefabInstance:
