@@ -6,6 +6,7 @@ public class PlayerJump : MonoBehaviour
     public PlayerMoveService moveService;
     [Header("입력 세팅")]
     public InputActionReference jumpAction;
+    
     private Rigidbody rb;
     
     void OnEnable()

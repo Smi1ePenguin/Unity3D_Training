@@ -12,4 +12,8 @@ public class BallStat : ScriptableObject
     [Header("Appearance")]
     public Color ballColor = Color.white;
     public float ballSize = 1f;
+
+
+
+    public int ball_bounced = 0;
 }
