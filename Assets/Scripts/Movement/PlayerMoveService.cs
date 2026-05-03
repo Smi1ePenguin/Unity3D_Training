@@ -7,7 +7,6 @@ public class PlayerMoveService : MonoBehaviour
     public BallStat stat;
     [Header("입력 세팅")]
     public InputActionReference moveAction;
-    public InputActionReference DashAction;
     public event Action<Vector3> OnMoveInput;
 
     private Vector3 movement;
@@ -16,14 +15,12 @@ public class PlayerMoveService : MonoBehaviour
     public void initialize()
     {
         moveAction.action.Enable();
-        DashAction.action.Enable();
         mainCamera = Camera.main.transform;
     }
 
     public void end()
     {
         moveAction.action.Disable();
-        DashAction.action.Disable();
     }
 
     public void Update()

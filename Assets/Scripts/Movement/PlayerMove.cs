@@ -21,6 +21,7 @@ public class PlayerMove : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+
     }
 
     private void ControllMove(Vector3 moveInput)
@@ -30,8 +31,18 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 Velocity = movement * moveService.stat.moveSpeed;
-        Velocity.y = rb.linearVelocity.y;
-        rb.linearVelocity = new Vector3(Velocity.x, rb.linearVelocity.y, Velocity.z);
+        rb.AddForce(movement * moveService.stat.moveSpeed, ForceMode.Force);
+        Vector3 flatVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+
+        if (flatVelocity.magnitude > moveService.stat.maxSpeed)
+        {
+            Vector3 limitedVelocity = flatVelocity.normalized * moveService.stat.maxSpeed;
+            rb.linearVelocity = new Vector3(limitedVelocity.x, rb.linearVelocity.y, limitedVelocity.z);
+        }
+
+        if(rb.linearVelocity.y < 0)
+        {   
+            rb.AddForce(Physics.gravity * rb.mass * 2.5f, ForceMode.Force);    //낙하 가속도 증가
+        }
     }
 }

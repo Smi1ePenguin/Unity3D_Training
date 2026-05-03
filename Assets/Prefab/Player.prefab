@@ -29,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6249466956039208714}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.15212339, y: -0, z: -0, w: 0.98836154}
-  m_LocalPosition: {x: 0, y: 1.5035291, z: -4.7685847}
+  m_LocalRotation: {x: 0.15212333, y: 0, z: 0, w: 0.98836154}
+  m_LocalPosition: {x: 0, y: 1.5035286, z: -4.768585}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2748274930338585888}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 17.5, y: -0.03, z: 0}
 --- !u!114 &7749796765699213069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,15 +260,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -192.05
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 122.43
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 215.07
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -307,6 +307,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 2456737238090384623}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 5267702787531415171}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
       insertIndex: -1
@@ -328,6 +331,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
   m_PrefabInstance: {fileID: 2748274930338973600}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2456737238090384623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2748274930338939136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe746de5af1a3f34f92c0d50037cc250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMoveService
+  stat: {fileID: 11400000, guid: 12e600c056c0d8640955ca177baa7204, type: 2}
+  moveAction: {fileID: 0}
 --- !u!114 &5267702787531415171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,8 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f8139533a973847bc685bf4bd2d7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
-  stat: {fileID: 11400000, guid: 12e600c056c0d8640955ca177baa7204, type: 2}
-  moveAction: {fileID: 0}
+  moveService: {fileID: 2456737238090384623}
 --- !u!114 &5484621486414125940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,8 +370,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b39b17cdd2731d84592cb44ea688db2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerJump
-  stat: {fileID: 11400000, guid: 12e600c056c0d8640955ca177baa7204, type: 2}
+  moveService: {fileID: 2456737238090384623}
   jumpAction: {fileID: 0}
+  SuperJumpPower: 200
+  onJump:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Bounce_Count, Assembly-CSharp
+        m_MethodName: CountUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &4987449464618759196
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -364,8 +396,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2748274930338939136}
   serializedVersion: 5
-  m_Mass: 10
-  m_LinearDamping: 1
+  m_Mass: 1
+  m_LinearDamping: 3
   m_AngularDamping: 0.1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}

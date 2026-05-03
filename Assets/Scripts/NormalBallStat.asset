@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9634b2d8d3cc9046bdb0b502aec3030, type: 3}
   m_Name: NormalBallStat
   m_EditorClassIdentifier: Assembly-CSharp::BallStat
-  moveSpeed: 7
-  jump: 100
-  dashPower: 2000
+  moveSpeed: 30
+  maxSpeed: 100
+  jump: 25
+  ball_bounced: 0
   ballColor: {r: 1, g: 1, b: 1, a: 1}
   ballSize: 1
