@@ -21,7 +21,6 @@ public class PlayerMove : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-
     }
 
     private void ControllMove(Vector3 moveInput)

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3386929199641541865}
   - component: {fileID: 1778659880576955212}
   - component: {fileID: 4560992988592326534}
-  - component: {fileID: 4799665782086755627}
+  - component: {fileID: 2237537930722021196}
   m_Layer: 0
   m_Name: FridgeBlackPurpleDay
   m_TagString: Untagged
@@ -91,8 +91,8 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4799665782086755627
-BoxCollider:
+--- !u!64 &2237537930722021196
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -109,6 +109,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 83, y: 241.51353, z: 83}
-  m_Center: {x: 6.916527, y: 11.945229, z: 0}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3082250236548730855, guid: ed3d1b864a0929a49a544f841a03c701, type: 3}

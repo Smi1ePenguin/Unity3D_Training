@@ -11,6 +11,7 @@ public class PlayerMoveService : MonoBehaviour
 
     private Vector3 movement;
     private Transform mainCamera;
+    public float air_time = 0f;
 
     public void initialize()
     {

@@ -8,6 +8,7 @@ public class BallStat : ScriptableObject
     public float maxSpeed = 10f;
     public float jump = 7f;
     public int ball_bounced = 0;
+    public int max_bounce = 100;
 
     [Header("Appearance")]
     public Color ballColor = Color.white;

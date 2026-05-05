@@ -260,15 +260,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -192.05
+      value: 35.02
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 122.43
+      value: 221.48
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 215.07
+      value: -54.26
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -313,7 +313,16 @@ PrefabInstance:
       addedObject: {fileID: 5267702787531415171}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 8600529292367218419}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 5484621486414125940}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4108484121429824957}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 583371482448699108}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4987449464618759196}
@@ -345,6 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMoveService
   stat: {fileID: 11400000, guid: 12e600c056c0d8640955ca177baa7204, type: 2}
   moveAction: {fileID: 0}
+  air_time: 0
 --- !u!114 &5267702787531415171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,6 +368,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
   moveService: {fileID: 2456737238090384623}
+--- !u!114 &8600529292367218419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2748274930338939136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2acee2be0e214240a8370d52db92e5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Restart
 --- !u!114 &5484621486414125940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,6 +395,7 @@ MonoBehaviour:
   moveService: {fileID: 2456737238090384623}
   jumpAction: {fileID: 0}
   SuperJumpPower: 200
+  soundThreshold: 10
   onJump:
     m_PersistentCalls:
       m_Calls:
@@ -388,6 +411,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4108484121429824957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2748274930338939136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc5ee4117a10854ba31cde982ebaa2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameOverManager
+  playermoveservice: {fileID: 2456737238090384623}
+  gameOverPanel: {fileID: 0}
+  clearPanel: {fileID: 0}
+  clearTrophy: {fileID: 0}
+--- !u!114 &583371482448699108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2748274930338939136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2653b0a626814504c8d5ea2cde715637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PointManager
+  pointText: {fileID: 0}
 --- !u!54 &4987449464618759196
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -398,7 +450,7 @@ Rigidbody:
   serializedVersion: 5
   m_Mass: 1
   m_LinearDamping: 3
-  m_AngularDamping: 0.1
+  m_AngularDamping: 0.2
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}

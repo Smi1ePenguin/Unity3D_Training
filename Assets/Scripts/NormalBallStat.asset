@@ -15,6 +15,7 @@ MonoBehaviour:
   moveSpeed: 30
   maxSpeed: 100
   jump: 25
-  ball_bounced: 0
+  ball_bounced: 101
+  max_bounce: 100
   ballColor: {r: 1, g: 1, b: 1, a: 1}
   ballSize: 1

@@ -34,9 +34,21 @@ public class PlayerJump : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(!IsGrounded() && rb.linearVelocity.y < 0)
+        if(!IsGrounded())
         {
-            rb.linearDamping = 1f;
+            moveService.air_time += Time.fixedDeltaTime;
+        }
+        else
+        {
+            if(moveService.air_time > 0f)
+            {
+                moveService.air_time = 0f;
+            }
+        }
+
+        if(moveService.air_time > 1f && rb.linearVelocity.y < 0)
+        {
+            rb.linearDamping = 0.1f;
         }
         else
         {
@@ -63,6 +75,8 @@ public class PlayerJump : MonoBehaviour
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
 
             rb.AddForce(Vector3.up * SuperJumpPower, ForceMode.Impulse);
+
+            moveService.air_time = -1f;
         }
         else
         {

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 //======================================================================================================================================================
 public interface IAudioManager
 {
@@ -18,6 +19,10 @@ public class AudioManager : MonoBehaviour, IAudioManager
         [Range(0f, 1f)] public float volume = 0.5f;
     }
     //======================================================================================================================================================
+    [Header("오디오 믹서")]
+    public AudioMixerGroup sfxMixerGroup;        //효과음 믹서 그룹
+    public AudioMixerGroup bgmMixerGroup;        //배경음 믹서 그룹
+
     [Header("효과음 파일 딕셔너리")]
     public SoundData[] soundDataArray;       //효과음들을 SoundData 형식의 배열로 저장
     private Dictionary<string, SoundData> soundDictionary = new Dictionary<string, SoundData>();
@@ -35,6 +40,8 @@ public class AudioManager : MonoBehaviour, IAudioManager
         AudioServiceLocator.Register<IAudioManager>(this);      //서비스 로케이터에 할당
 
         audioSource = gameObject.AddComponent<AudioSource>();   //audioSource 컴포넌트 추가
+        audioSource.outputAudioMixerGroup = sfxMixerGroup;     //효과음 믹서 그룹 할당
+
         foreach(var sound in soundDataArray)                    //딕셔너리에 추가
         {
             soundDictionary.Add(sound.name, sound);
@@ -42,6 +49,8 @@ public class AudioManager : MonoBehaviour, IAudioManager
 
         bgmAudioSource = gameObject.AddComponent<AudioSource>();    //배경음 전용 audioSource 컴포넌트 추가
         bgmAudioSource.loop = true;                                 //배경음은 반복 재생
+        bgmAudioSource.outputAudioMixerGroup = bgmMixerGroup;     //배경음 믹서 그룹 할당
+        
         foreach(var bgm in bgmDataArray)                            //딕셔너리에 추가
         {
             bgmDictionary.Add(bgm.name, bgm);

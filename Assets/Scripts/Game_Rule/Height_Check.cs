@@ -10,6 +10,6 @@ public class Height_Check : MonoBehaviour
     private void Update()
     {
         float currentHeight = player.position.y - 1.2f;
-        hightText.text = "Height: " + currentHeight.ToString("F1") + "m";
+        hightText.text = currentHeight.ToString("F1") + "m";
     }
 }
